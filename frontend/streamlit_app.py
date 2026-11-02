@@ -84,9 +84,10 @@ with st.sidebar:
     st.image("https://img.icons8.com/fluency/96/bank-cards.png", width=64)
     st.title("Settings & Tools")
 
+    default_backend_url = os.getenv("BACKEND_API_URL", "http://127.0.0.1:8000")
     api_url = st.text_input(
         "FastAPI Backend URL",
-        value="http://127.0.0.1:8000",
+        value=default_backend_url,
         help="Address of the running FastAPI server"
     )
 
